@@ -2,7 +2,7 @@ import streamlit as st
 from sqlalchemy.orm import configure_mappers
 
 # Importa los modelos y base desde db.py
-from db import Base, User, Library, Permission, Shelf, Collection, Book, Page
+from models.db import Base, User, Library, Permission, Shelf, Collection, Book, Page
 
 # Fuerza la resolución de relaciones antes de cualquier consulta
 configure_mappers()

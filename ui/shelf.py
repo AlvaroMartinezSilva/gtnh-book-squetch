@@ -36,7 +36,7 @@ class ShelfUI:
                     self.db.add(new_shelf)
                     self.db.commit()
                     st.success("Shelf created.")
-                    st.experimental_rerun()
+                    st.rerun()
         else:
             st.info("🔒 You have read-only access to this library.")
 

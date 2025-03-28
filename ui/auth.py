@@ -24,12 +24,12 @@ class AuthUI:
                 if user and user.verify_password(password):
                     st.session_state["user"] = user.username
                     st.success(f"Welcome {user.username}!")
-                    st.experimental_rerun()
+                    st.rerun()
                 else:
                     st.error("Invalid credentials")
         if st.button("Don't have an account? Register"):
             st.session_state["auth_mode"] = "register"
-            st.experimental_rerun()
+            st.rerun()
 
     def register_form(self):
         st.title("🆕 Register")
@@ -49,7 +49,7 @@ class AuthUI:
                 db.commit()
                 st.success("Account created successfully.")
                 st.session_state["auth_mode"] = "login"
-                st.experimental_rerun()
+                st.rerun()
         if st.button("Already have an account? Login"):
             st.session_state["auth_mode"] = "login"
-            st.experimental_rerun()
+            st.rerun()

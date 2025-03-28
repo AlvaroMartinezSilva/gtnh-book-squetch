@@ -30,4 +30,4 @@ class PageUI:
                 self.db.add(new_page)
                 self.db.commit()
                 st.success("Page created.")
-                st.experimental_rerun()
+                st.rerun()

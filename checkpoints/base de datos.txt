@@ -85,8 +85,7 @@ class Page(Base):
     book = relationship("Book", back_populates="pages")
 
 if __name__ == "__main__":
-    engine = create_engine("sqlite:///gtnh_library.db")
-    Base.metadata.create_all(engine)
+    engine = create_engine(os.getenv("DB_URL", "sqlite:///gtnh_library.db"))    Base.metadata.create_all(engine)
     print("📚 Collaborative library database with authentication and canvas support created successfully.")
 
 

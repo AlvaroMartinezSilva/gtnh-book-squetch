@@ -42,4 +42,4 @@ class LibraryUI:
                 self.db.add(new_lib)
                 self.db.commit()
                 st.success("Library created!")
-                st.experimental_rerun()
+                st.rerun()

@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, ForeignKey, Boolean ,String,Text,DateTime
 from sqlalchemy.orm import relationship
-from models.base import Base
+from models import Base
 
 class Page(Base):
     __tablename__ = 'pages'

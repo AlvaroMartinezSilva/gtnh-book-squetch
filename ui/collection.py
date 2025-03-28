@@ -27,4 +27,4 @@ class CollectionUI:
                 self.db.add(new_collection)
                 self.db.commit()
                 st.success("Collection created.")
-                st.experimental_rerun()
+                st.rerun()

@@ -3,15 +3,15 @@ version: '3.8'
 services:
   db:
     image: postgres:16
-    container_name: gtnh_postgres
+    restart: always
     environment:
-      POSTGRES_USER: alv
-      POSTGRES_PASSWORD: secret
-      POSTGRES_DB: bookdata
-    ports:
-      - "5432:5432"
+      POSTGRES_DB: gtnh_library
+      POSTGRES_USER: gtnh_user
+      POSTGRES_PASSWORD: gtnh_pass
     volumes:
       - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
 volumes:
   pgdata:

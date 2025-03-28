@@ -1,7 +1,7 @@
 import hashlib
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from models.base import Base
+from models import Base
 
 class Library(Base):
     __tablename__ = 'libraries'

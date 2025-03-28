@@ -25,5 +25,5 @@ class BookUI:
                 self.db.add(new_book)
                 self.db.commit()
                 st.success("Book added.")
-                st.experimental_rerun()
+                st.rerun()
 

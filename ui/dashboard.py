@@ -2,7 +2,8 @@ import streamlit as st
 from sqlalchemy.orm import Session
 from db.session import SessionLocal
 from models.user import User
-from models.library import Library, Permission
+from models.library import Library
+from models.permission import Permission
 from ui.shelf import ShelfUI
 
 class DashboardUI:
@@ -49,7 +50,7 @@ class DashboardUI:
                 self.db.add(lib)
                 self.db.commit()
                 st.success("Library created.")
-                st.experimental_rerun()
+                st.rerun()
 
     def _resolve_library(self, selection, owned, shared):
         name = selection.replace(" (owner)", "").replace(" (shared)", "")

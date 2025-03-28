@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 from sqlalchemy.orm import Session
-from models.page import Page
+from models.db import Page
 from db.session import SessionLocal
 
 class PageUI:

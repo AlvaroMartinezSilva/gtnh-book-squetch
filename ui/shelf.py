@@ -1,10 +1,7 @@
 import streamlit as st
 from sqlalchemy.orm import Session
 from db.session import SessionLocal
-from models.shelf import Shelf
-from models.library import Library
-from models.permission import Permission
-from models.user import User
+from models.db import Shelf,Library,Permission,User
 from ui.collection import CollectionUI
 
 class ShelfUI:

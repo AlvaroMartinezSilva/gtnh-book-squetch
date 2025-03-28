@@ -1,9 +1,7 @@
 import streamlit as st
 from sqlalchemy.orm import Session
 from db.session import SessionLocal
-from models.user import User
-from models.library import Library
-from models.permission import Permission
+from models.db import User,Permission,Library
 from ui.shelf import ShelfUI
 
 class DashboardUI:

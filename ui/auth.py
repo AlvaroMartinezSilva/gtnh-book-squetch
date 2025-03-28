@@ -1,6 +1,6 @@
 import streamlit as st
 from sqlalchemy.orm import Session
-from models.user import User
+from models.db import User, Library, Permission  # 🔐 Esto resuelve las relaciones
 from db.session import SessionLocal
 
 class AuthUI:

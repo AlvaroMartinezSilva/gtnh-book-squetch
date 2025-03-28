@@ -1,7 +1,6 @@
 import streamlit as st
 from sqlalchemy.orm import Session
-from models.book import Book
-from models.collections import Collection
+from models.db import Collection,Book
 from db.session import SessionLocal
 
 class BookUI:

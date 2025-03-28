@@ -3,7 +3,7 @@ version: '3.8'
 services:
   db:
     image: postgres:16
-    restart: always
+    restart: unless-stopped
     environment:
       POSTGRES_DB: gtnh_library
       POSTGRES_USER: gtnh_user
@@ -12,6 +12,17 @@ services:
       - pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+
+  app:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8501:8501"
+    environment:
+      - DB_URL=postgresql://gtnh_user:gtnh_pass@db:5432/gtnh_library
+    volumes:
+      - .:/app
 
 volumes:
   pgdata:

@@ -1,7 +1,7 @@
 import streamlit as st
 from sqlalchemy.orm import Session
 from db.session import SessionLocal
-from models.collections import Collection
+from models.db import Collection
 
 class CollectionUI:
     def __init__(self, shelf_id: int):

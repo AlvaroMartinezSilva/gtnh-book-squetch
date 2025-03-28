@@ -1,9 +1,7 @@
 import streamlit as st
 from sqlalchemy.orm import Session
 from db.session import SessionLocal
-from models.library import Library
-from models.permission import Permission
-from models.user import User
+from models.db import Library,Permission,User
 
 class LibraryUI:
     def __init__(self, username):

@@ -1,8 +1,15 @@
 import streamlit as st
+from sqlalchemy.orm import configure_mappers
+
+# Importa los modelos y base desde db.py
+from db import Base, User, Library, Permission, Shelf, Collection, Book, Page
+
+# Fuerza la resolución de relaciones antes de cualquier consulta
+configure_mappers()
+
 from ui.auth import AuthUI
 from ui.dashboard import DashboardUI
 from db.session import SessionLocal
-from models.user import User
 
 def load_user_info():
     if "user" in st.session_state and "user_id" not in st.session_state:
@@ -15,7 +22,6 @@ def logout():
     if st.sidebar.button("🚪 Logout"):
         st.session_state.clear()
         st.rerun()
-
 
 def main():
     st.set_page_config(page_title="GTNH Library", layout="wide")
